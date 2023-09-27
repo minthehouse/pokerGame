@@ -1,20 +1,32 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title> Welcome To Poker Game </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <form [formGroup]="form" (ngSubmit)="submit(form)" novalidate>
+    <ion-row class="mb-4">
+      <ion-col class="flex flex-col gap-2">
+        <ion-label class="flex justify-center font-medium"
+          >Please select number of players</ion-label
+        >
+        <ion-list class="flex justify-center items-center">
+          <ion-item>
+            <ion-select
+              formControlName="number_of_players"
+              interface="popover"
+              placeholder="Select Number of Players"
+            >
+              <ion-select-option value="2">2 players</ion-select-option>
+              <ion-select-option value="3">3 players</ion-select-option>
+              <ion-select-option value="4">4 players</ion-select-option>
+              <ion-select-option value="5">5 players</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+        <ion-button type="submit"> Start Game</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
 </ion-content>
