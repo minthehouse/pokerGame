@@ -1,3 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/"
+        text="Back"
+        fill="clear"
+        size="large"
+      ></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content scrollY="false">
   <div *ngIf="playerHands.length > 0">
     <ion-list *ngFor="let playerHand of playerHands">
