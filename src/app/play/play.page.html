@@ -1,0 +1,17 @@
+<ion-content scrollY="false">
+  <div *ngIf="playerHands.length > 0">
+    <ion-list *ngFor="let playerHand of playerHands">
+      <ion-item>
+        <div [ngClass]="{'bg-green-300': playerHand.isWinner}">
+          Player {{ playerHand.player_id }}:
+        </div>
+        <ion-list *ngFor="let card of playerHand.cards" class="pl-2">
+          <img
+            [src]="getCardImageSrc(card)"
+            style="width: 4.5rem; height: 6rem; padding: 0.2rem"
+          />
+        </ion-list>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
