@@ -1,13 +1,41 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> Welcome To Poker Game </ion-title>
+    <ion-title> Home </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <form [formGroup]="form" (ngSubmit)="submit(form)" novalidate>
-    <ion-row class="mb-4">
-      <ion-col class="flex flex-col gap-2">
+<ion-content scrollY="false">
+  <ion-card class="py-6">
+    <ion-card-header>
+      <ion-card-title>Welcome to Poker Game</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <br />
+      Hi, this is a poker simulating application developed by Homin Lee.
+      <br />
+      <br />
+      You can select number of players and start to see the winner and result.
+      <br />
+      <br />
+      If you would like to take a look at the source code, please visit my
+      GitHub Repository via the buttons below.
+    </ion-card-content>
+
+    <ion-button class="flex" fill="clear">
+      <a href="https://github.com/minthehouse/pokerGame"
+        >Go to GitHub Repository</a
+      >
+    </ion-button>
+  </ion-card>
+  <form
+    [formGroup]="form"
+    #ngForm="ngForm"
+    (ngSubmit)="submit(ngForm)"
+    novalidate
+    class="py-6"
+  >
+    <ion-row>
+      <ion-col class="flex flex-col gap-5">
         <ion-label class="flex justify-center font-medium"
           >Please select number of players</ion-label
         >
@@ -18,13 +46,21 @@
               interface="popover"
               placeholder="Select Number of Players"
             >
-              <ion-select-option value="2">2 players</ion-select-option>
-              <ion-select-option value="3">3 players</ion-select-option>
-              <ion-select-option value="4">4 players</ion-select-option>
-              <ion-select-option value="5">5 players</ion-select-option>
+              <ion-select-option
+                *ngFor="let i of [2, 3, 4, 5, 6, 7, 8]"
+                [value]="i"
+              >
+                {{ i }} players
+              </ion-select-option>
             </ion-select>
           </ion-item>
         </ion-list>
+        <div
+          *ngIf="ngForm.submitted && form.get('number_of_players')?.hasError('required')"
+          class="text-red-500 flex justify-center"
+        >
+          Number of players is required.
+        </div>
         <ion-button type="submit"> Start Game</ion-button>
       </ion-col>
     </ion-row>
