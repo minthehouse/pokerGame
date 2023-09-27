@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content scrollY="false">
-  <ion-card class="py-6">
+  <ion-card class="flex flex-col items-center sm:py-6">
     <ion-card-header>
       <ion-card-title>Welcome to Poker Game</ion-card-title>
     </ion-card-header>
@@ -21,7 +21,7 @@
       GitHub Repository via the buttons below.
     </ion-card-content>
 
-    <ion-button class="flex" fill="clear">
+    <ion-button fill="clear">
       <a href="https://github.com/minthehouse/pokerGame"
         >Go to GitHub Repository</a
       >
@@ -32,10 +32,10 @@
     #ngForm="ngForm"
     (ngSubmit)="submit(ngForm)"
     novalidate
-    class="py-6"
+    class="sm:py-6"
   >
     <ion-row>
-      <ion-col class="flex flex-col gap-5">
+      <ion-col class="flex flex-col gap-3 sm:gap-5">
         <ion-label class="flex justify-center font-medium"
           >Please select number of players</ion-label
         >

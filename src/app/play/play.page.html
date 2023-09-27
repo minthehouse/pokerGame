@@ -11,7 +11,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content scrollY="false">
+<ion-content>
   <div *ngIf="playerHands.length > 0">
     <ion-list *ngFor="let playerHand of playerHands">
       <ion-item>
@@ -21,7 +21,7 @@
         <ion-list *ngFor="let card of playerHand.cards" class="pl-2">
           <img
             [src]="getCardImageSrc(card)"
-            style="width: 4.5rem; height: 6rem; padding: 0.2rem"
+            class="w-12 h-16 sm:w-16 sm:h-20 md:w-20 md:h-24"
           />
         </ion-list>
       </ion-item>
