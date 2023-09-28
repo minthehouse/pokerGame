@@ -3,6 +3,12 @@
 
 Welcome to the Poker Simulation Game, an Ionic Angular application that allows you to simulate poker games with various players and view the results. This README provides an overview of the project, how to set it up, and how to use it.
 
+
+
+https://github.com/minthehouse/pokerGame/assets/32519588/d57b49e6-2145-41d5-92d8-0c67f2e0b514
+
+
+
 ## Table of Contents
 
 - [Features](#features)
