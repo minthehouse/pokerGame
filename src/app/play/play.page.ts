@@ -43,7 +43,7 @@ export class PlayPage implements OnInit {
   }
 
   startGame(number_of_players: number) {
-    console.log('hit number_of_players', number_of_players);
+    console.log('number_of_players', number_of_players);
     const shuffledDeck = this.cardService.shuffleDeck();
 
     this.distributeCardsOneByOne(shuffledDeck, number_of_players);
@@ -65,10 +65,10 @@ export class PlayPage implements OnInit {
 
         setTimeout(() => {
           distributeCard(playerIndex + 1);
-        }, 1000); // Adjust the delay as needed
+        }, 1000);
       } else {
         this.gameService.selectWinner(this.playerHands);
-        console.log('this.playerHands', this.playerHands);
+        console.log('playerHands at the end of game', this.playerHands);
       }
     };
 
